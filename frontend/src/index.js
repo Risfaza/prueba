@@ -6,13 +6,13 @@ function App() {
   const [input, setInput] = useState("");
 
   const fetchMessages = async () => {
-    const res = await fetch('http://localhost:5000/api/messages');
+    const res = await fetch('http://femers.ddns.net:5000/api/messages');
     const data = await res.json();
     setMessages(data);
   };
 
   const sendMessage = async () => {
-    await fetch('http://localhost:5000/api/messages', {
+    await fetch('http://femers.ddns.net:5000/api/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: input })
